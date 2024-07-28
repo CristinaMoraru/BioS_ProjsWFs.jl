@@ -1,0 +1,7 @@
+name = "BioS_ProjsWFs"
+uuid = "36c12c74-29c3-48bc-adf7-572884ba4778"
+authors = ["Cristina Moraru"]
+version = "0.2.0"
+
+[compat]
+julia = "1.10"
