@@ -8,16 +8,13 @@ export load_proj, do_pd
 ALLOWED_VALS_PROJ is a constant dictionary which stores possible values related to the project management.
 
 Signals for common, parallel steps (set by the user):
-    do - run the step. Can be always used, regardless of the signals in the previous steps
-    dont - don't run the step. It can be used only if the project is new (continue = false), or, for continued projects,
-                                 if there was a 'dont' or 'remove' signal in the previous step.
-    ignore - doesn't take into cosideration existing results. It can't be used if the project is new (continue = false).
-                                            For continued projects, it can be used only after 'do', 'use' or 'ignore' in the previous step, and, if their respective "progress" is finished. 
-    use - re-use already calculated steps. It can't be used if the project is new (continue = false). 
-                                            For continued projects, it can be used only after 'do', 'use' or 'ignore' in the previous step, and, if their respective "progress" is finished.
-    remove - removes results calculated in a previous step. It can't be used if the project is new (continue = false).
-                                            For continued projects, it can be used only after 'do', 'use' or ignore in the previous step, regardless of their "progress". 
-Signals for 
+        * 'do' - run this predictor step. Can be always used, regardless of the signals in the previous steps
+        * 'dont' - don't run this predictor step. It can be used only if the project is new (continue = false), or, for continued projects, if there was a 'dont' or 'remove' signal in the previous step.
+        * 'use'- re-use predictor results calculated in previous runs of this project. It can't be used if the project is new (continue = false). For continued projects, it can be used only after 'do', 'use' or 'ignore' in the previous step, and, if their respective "progress" is finished.
+        * 'use_external' - use results calculated previously by the predictor independently from a DoViP project.
+        * 'ignore' - doesn't take into consideration existing results calculated in a previous run of this project. It can't be used if the project is new (continue = false). For continued projects, it can be used only after 'do', 'use' or 'ignore' in the previous step, and, if their respective "progress" is finished. 
+        * 'remove' - removes results calculated in a previous step. It can't be used if the project is new (continue = false). For continued projects, it can be used only after 'do', 'use' or ignore in the previous step, regardless of their "progress". 
+    
 """
 const ALLOWED_VALS_PROJ = Dict(
     "signal" => ("do", "dont", "use", "ignore", "remove", "use_external"),   
