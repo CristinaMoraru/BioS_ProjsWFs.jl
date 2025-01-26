@@ -439,6 +439,8 @@ function do_pd(spd::String)
             println("Invalid input, must be 'yes' or 'no'.")
             do_pd(spd)
         end
+    else
+        my_mkpath([spd])
     end
 
     return nothing

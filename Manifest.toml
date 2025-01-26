@@ -12,11 +12,11 @@ uuid = "2a0f44e3-6c83-55bd-87e4-b1978d98bd5f"
 
 [[deps.BioS_Gen]]
 deps = ["DataFrames", "StringAlgorithms"]
-git-tree-sha1 = "36a6851a7920cd3fa7bd405296f1cfdb26cbf0a0"
-repo-rev = "V0.2.0"
+git-tree-sha1 = "033888945f7aa2aca538e01832ffb2ec9423da78"
+repo-rev = "v0.2.2"
 repo-url = "https://github.com/CristinaMoraru/BioS_Gen.jl"
 uuid = "a3c344c2-dffd-44c7-b934-12f2f183f71e"
-version = "0.2.0"
+version = "0.2.2"
 
 [[deps.CSV]]
 deps = ["CodecZlib", "Dates", "FilePathsBase", "InlineStrings", "Mmap", "Parsers", "PooledArrays", "PrecompileTools", "SentinelArrays", "Tables", "Unicode", "WeakRefStrings", "WorkerUtilities"]
