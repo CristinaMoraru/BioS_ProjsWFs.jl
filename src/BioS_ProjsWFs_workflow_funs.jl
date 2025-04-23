@@ -382,7 +382,7 @@ end
 run_workflow(proj::Any) = println("run_workflow method not defined for this project type.")
 run_workflow!(proj::Any) = println("run_workflow method not defined for this project type.")
 
-function do_wfstep(step::String, proj::BioinfSProj, fun::Function, splatargs; logfun::Union{Missing, Function} = missing, splatkwargs...) # fun::Function
+function do_wfstep(step::String, proj::BioinfSProj, fun::Function, splatargs; logfun::Union{Missing, Function} = missing, splatkwargs = NamedTuple) # fun::Function
     if proj.dosteps[step].signal in ["do", "use_external"]
         set2running!(step, proj; logfun = logfun)
 
@@ -399,7 +399,7 @@ end
 """
     This method is for functions which were performed in a previous run and now only used. It returns the previous results, if the workflow requires them. ????????????
 """
-function do_wfstep(step::String, proj::BioinfSProj, fun::Function, splatargs, saved, ; logfun::Union{Missing, Function} = missing, splatkwargs...) # fun::Function
+function do_wfstep(step::String, proj::BioinfSProj, fun::Function, splatargs, saved, ; logfun::Union{Missing, Function} = missing, splatkwargs = NamedTuple()) # fun::Function
     if proj.dosteps[step].signal == "do"
         set2running!(step, proj; logfun = logfun)
 
