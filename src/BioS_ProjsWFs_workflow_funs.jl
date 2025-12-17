@@ -428,7 +428,7 @@ struct ProjMultiWorkflow <: BioinfMProj
 
 function do_pd(spd::String)
     if ispath(spd)
-        println("The $spd folder already exists. Type 'yes' to overwrite it and continue. Type 'no' to quit DoViP.")
+        println("The $spd folder already exists. Type 'yes' to overwrite it and continue. Type 'no' to quit.")
         answer = readline()
 
         if answer == "yes"
